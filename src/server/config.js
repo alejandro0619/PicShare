@@ -1,18 +1,18 @@
-//Importing modules:
+// ! Importing modules:
 const path = require('path')
 const exphbs = require('express-handlebars')
 const morgan = require('morgan')
 const multer = require('multer')
 const express = require('express')
 const routes = require('../routes/index')
-
-//Server Config:
+const errorHandler = require('errorhandler')
+// ! Server Config:
 module.exports = app => {
    app.set('port', process.env.PORT|| 3000)
 
    app.set('views', path.join(__dirname, '../views'))
 
-    // handlebars basic config:
+    // ! handlebars basic config:
    app.engine('.hbs', exphbs({
       defaultLayout: 'main',
       layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -21,10 +21,10 @@ module.exports = app => {
       extname: '.hbs'
     })
   )
-  //Setting view engine
+  // ! Setting view engine
   app.set('view engine', '.hbs')
 
-  //Middlewares:
+  // ! Middlewares:
   app.use(morgan('dev'))
   app.use(multer({
       dest: path.join(__dirname, '../public/upload/temp')
@@ -34,7 +34,17 @@ module.exports = app => {
   }))
   app.use(express.json())
 
-  //errorhandler:
+  // ! Routes:
+
+  routes(app)
+  //! static files:
+  app.use('/public',express.static(path.join(__dirname, '../public')))
+
+  // ! errorhandler:
+  if('development' === app.get('env')){
+    app.use(errorHandler)
+  }
     return app
     
 }
+
