@@ -1,7 +1,7 @@
 {
   "name": "imgshare",
   "version": "1.0.0",
-  "description": "A social network based on Fazt Web Tutorials",
+  "description": "Social network igmur-based",
   "main": "index.js",
   "dependencies": {
     "errorhandler": "^1.5.1",
