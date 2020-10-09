@@ -1,29 +1,29 @@
-# Foobar
+# PicShare
 
-Foobar is a Python library for dealing with word pluralization.
+PicShare is a igmur's based social network.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Clone this repository:
+```
+git clone https://github.com/alejandro0619/PicShare.git
+```
+Use the package manager [npm](https://www.npmjs.com) to install dependencies.
 
-```bash
-pip install foobar
+```bash:
+ npm install
 ```
 
 ## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+To ren this project:
+```bash
+npm start
 ```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
- nnn 
+ 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
