@@ -28,8 +28,7 @@ module.exports = app => {
   // ! Middlewares:
   app.use(morgan('dev'));
   app.use(multer({
-      dest: path.join(__dirname, '../public/upload/temp')
-  }).single('image'));
+      dest: path.join(__dirname, '../public/upload/temp')}).single('image'));
   app.use(express.urlencoded({
       extended: false
   }));
