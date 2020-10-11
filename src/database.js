@@ -1,6 +1,7 @@
-// Database connect settings:
-const mongoose = require('mongoose')
-const { database } = require('./keys')
+// ! Database connect settings:
+const mongoose = require('mongoose');
+const { database } = require('./keys');
+// ! Create the connection:
 mongoose.connect(database.URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true

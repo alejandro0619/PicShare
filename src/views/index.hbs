@@ -1,1 +1,31 @@
-<h1>Images</h1>
+<div class="card">
+    <div class="card-header bg-dark">
+        <h3 class="card-title text-white bg-dark">
+            <i class="fa fa-image"></i> Upload an image:
+        </h3>
+    </div>
+    <div class="card-body">
+        <form action="/images" method="POST">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" name="image" class="custom-file-input" id="input-group" aria-describedby="inputGroupFileAddon" required>
+                    <label class="custom-file-label border" for="inputGroupFile"> Choose your file</label>
+                    
+                </div>
+            </div>
+        </div>
+         <div class="form-group">
+                <input type="text" name="title" class="form-control border" placeholder="Title for the image" required>
+            </div>
+        <div class="form-group">
+            <textarea  name="description"rows="2" class="form-control" placeholder="Set your image's description" required></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success">
+              <i class="fa fa-upload"></i>  Upload it!
+            </button>
+        </div>
+        </form>
+    </div>
+</div>

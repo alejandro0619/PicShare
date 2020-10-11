@@ -1,3 +1,4 @@
+// ! Images [Upload, Delete, Render, Like, Comment] controllers
 const imgCtrl = {
     index(req, res){
 
@@ -15,4 +16,4 @@ const imgCtrl = {
         
     }
 }
-module.exports = imgCtrl
+module.exports = imgCtrl;

@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
-    
+    <!-- Bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+    <!-- custom CSS-->
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <!-- Google fonts-->
+   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+   <!--FontAwesome-->
+   <script src="https://use.fontawesome.com/68a06eabce.js"></script>
+
     <title>PicShare</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-dark">
-        <div class="container">
-            <a href="/" class="navbar navbar-brand">
-            <img src="../../public/img/shot.webp" alt="">
-            </a>
-        </div>
+        
+            <a href="/" class="navbar navbar-brand text-white">
+             SketchPics - Social Network
+            </a>        
     </nav>
+ <div class="container p-4">
+     <div class="row">
+         <div class="col-md-8">
+              {{{ body }}}
+         </div>
+         <div class="col-md-4">
+
+         </div>
+     </div>
+
+ </div>
+
 </body>
 </html>
