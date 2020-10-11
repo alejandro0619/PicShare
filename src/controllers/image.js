@@ -2,7 +2,7 @@
 const path = require('path');
 const { randomNumber } = require('../helpers/libs');
 const fs = require('fs-extra');
-
+ const  { Image } = require('../models/')
 // ! Images [Upload, Delete, Render, Like, Comment] controllers:
 
 const imgCtrl = {
@@ -22,9 +22,19 @@ const imgCtrl = {
         const targetPath = path.resolve(`src/public/upload/${imageURL}${ext}`);
         if(ext ==='.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'){
            await fs.rename(imageTempPath, targetPath);
-           res.send('works');
+          const newImg = new Image({
+               title: req.body.title,
+               filename: imageURL + ext,
+               description: req.body.description,
+           });
+           // * Save the img in the DB:
+           const imgSaved = await newImg.save();
+           //
+           res.status(201).redirect('/');
+           console.log(newImg);
+           console.log(imgSaved)
         }
-        res.send('didnt works');
+        
         
     },
     like(req, res){
