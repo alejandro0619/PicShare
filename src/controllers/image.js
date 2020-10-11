@@ -15,8 +15,16 @@ const imgCtrl = {
     *If it's not, send error message:
     */
      async create(req, res){
+         // * Generates a random names:
         const imageURL = randomNumber();
-        console.log(imageURL);
+        /*
+        * query the database with the name generated above
+        * 
+        */
+        const images = await Image.find({
+            filename: imageURL
+        });
+
         const imageTempPath = req.file.path;
         const ext = path.extname(req.file.originalname).toLowerCase();
         const targetPath = path.resolve(`src/public/upload/${imageURL}${ext}`);
@@ -32,10 +40,13 @@ const imgCtrl = {
            //
            res.status(201).redirect('/');
            console.log(newImg);
-           console.log(imgSaved)
-        }
-        
-        
+        } else{
+            await fs.unlink(imageTempPath);
+            res.status(500).json({
+                error: 'Only images are allowed, please try again.'
+            });
+        };
+
     },
     like(req, res){
 
