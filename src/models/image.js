@@ -7,7 +7,7 @@ const ImageSchema = new Schema({
     title: {
         type: String
     },
-    description:{
+    description: {
         type: String
     },
     filename: {
@@ -27,7 +27,7 @@ const ImageSchema = new Schema({
     }
 });
 ImageSchema.virtual('uniqueId')
-    .get(function(){
+    .get(function () {
         return this.filename.replace(path.extname(
             this.filename))
     });
