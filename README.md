@@ -1,7 +1,8 @@
 # PicShare
 
-PicShare is a igmur's based social network.
+PicShare is a igmur-based social network. Inspired in FaztTech repository.
 
+![](./doc/screenshot.jpg "ScreenShot")
 ## Installation
 
 Clone this repository:
