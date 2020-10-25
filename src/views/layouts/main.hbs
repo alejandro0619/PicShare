@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
-    <!-- custom CSS-->
-    <link rel="stylesheet" href="../../public/css/styles.css">
-    <!-- Google fonts-->
-   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-   <!--FontAwesome-->
-   <script src="https://use.fontawesome.com/68a06eabce.js"></script>
+    {{>head}}
+  </head>
+  <body>
+    {{>navigation}}
 
-    <title>PicShare</title>
-</head>
-<body>
-    <nav class="navbar navbar-light bg-dark">
-        
-            <a href="/" class="navbar navbar-brand text-white">
-             SketchPics - Social Network
-            </a>        
-    </nav>
- <div class="container p-4">
-     <div class="row">
-         <div class="col-md-8">
-              {{{ body }}}
-         </div>
-         <div class="col-md-4">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-8">
+          {{{ body  }}} 
+        </div>
+        <div class="col-md-4">
+          {{>stats this}}
+          {{>popular this}}
+          {{>comments this}}
+        </div>
+      </div>
+    </div>
 
-         </div>
-     </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white">
+      <div class="container p-2">
+        <div class="row">
+          <div class="mx-auto text-center">
+            <p>&copy; Copyright {{getCurrentYear}}, All rights reserved</p>
+            <p>
+              <i class="fab fa-twitter-square fa-2x"></i>
+              <i class="fab fa-facebook-square fa-2x"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
- </div>
-
-</body>
+    <!-- SCRIPTS -->
+    {{>footer}}
+    <script src="/public/js/scripts.js"></script>
+  </body>
 </html>

@@ -1,6 +1,5 @@
-// ! Database URI:
 module.exports = {
     database: {
-        URI: 'mongodb://localhost/picshare'
+      URI: process.env.MONGODB_URI || 'mongodb://localhost/imgshare'
     }
-};
+  };
